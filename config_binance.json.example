@@ -1,6 +1,6 @@
 {
     "max_open_trades": 3,
-    "stake_currency": "BTC",
+    "stake_currency": "BUSD",
     "stake_amount": 0.05,
     "tradable_balance_ratio": 0.99,
     "fiat_display_currency": "USD",
@@ -30,29 +30,15 @@
     },
     "exchange": {
         "name": "binance",
-        "key": "your_exchange_key",
-        "secret": "your_exchange_secret",
+        "key": "VnXpCZMORubnO82O4UtihCO1Wa6DDNqqlsIj47bdCkRbPNvYGHsz74WhYNKE9Mnz",
+        "secret": "gerXmx3IeU0xzm671MMeB9NBbgP4HyhI6V8fF45TFkqphLBpAQpMCUxrO1IHcjGb",
         "ccxt_config": {"enableRateLimit": true},
         "ccxt_async_config": {
             "enableRateLimit": true,
             "rateLimit": 200
         },
         "pair_whitelist": [
-            "ALGO/BTC",
-            "ATOM/BTC",
-            "BAT/BTC",
-            "BCH/BTC",
-            "BRD/BTC",
-            "EOS/BTC",
-            "ETH/BTC",
-            "IOTA/BTC",
-            "LINK/BTC",
-            "LTC/BTC",
-            "NEO/BTC",
-            "NXS/BTC",
-            "XMR/BTC",
-            "XRP/BTC",
-            "XTZ/BTC"
+            "BTC/BUSD"
         ],
         "pair_blacklist": [
             "BNB/BTC"
