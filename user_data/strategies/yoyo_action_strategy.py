@@ -32,7 +32,7 @@ class YoyoActionStrategy(IStrategy):
     overBought = 80
     overSold = 30
 
-    stoploss = -0.20
+    #stoploss = -0.20
     # Fast Trail 
     atrFast = 6
     atrFM = 0.5 # fast ATR multiplier
