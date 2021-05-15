@@ -26,8 +26,10 @@ class YoyoActionStrategy(IStrategy):
         'stoploss_on_exchange': False
     }
     
-    emaFast = 6
-    emaSlow = 18
+    # emaFast = 6
+    # emaSlow = 18
+    emaFast = 24
+    emaSlow = 112
     rsiPeriod = 14
     overBought = 80
     overSold = 30
@@ -136,7 +138,7 @@ class YoyoActionStrategy(IStrategy):
 
         dataframe.loc[(
             ((dataframe['red_last'] == False) & (dataframe['red'] == True)) # Red Sell
-            | ((dataframe['greenLine_last'] == True) & (dataframe['greenLine'] == False)) # Stop lost
+            # | ((dataframe['greenLine_last'] == True) & (dataframe['greenLine'] == False)) # Stop lost
         ), 'signal_sell'] = True
 
         return dataframe
