@@ -1,7 +1,7 @@
 ---
 version: '3'
 services:
-  freqtrade:
+  freqtrade_dry_action_zone_1:
     image: freqtradeorg/freqtrade:stable
     # image: freqtradeorg/freqtrade:develop
     # Use plotting image
@@ -11,7 +11,7 @@ services:
     #   context: .
     #   dockerfile: "./docker/Dockerfile.custom"
     restart: unless-stopped
-    container_name: freqtrade
+    container_name: freqtrade_dry_actionZone1
     volumes:
       - "./user_data:/freqtrade/user_data"
     # Expose api on port 8080 (localhost only)
@@ -23,6 +23,31 @@ services:
     command: >
       trade
       --logfile /freqtrade/user_data/logs/freqtrade.log
-      --db-url sqlite:////freqtrade/user_data/tradesv3.sqlite
-      --config /freqtrade/user_data/config.json
-      --strategy SampleStrategy
+      --db-url sqlite:////freqtrade/user_data/tradesv3.dryrun.actionZone1.sqlite
+      --config /freqtrade/user_data/configs/config_binance_zone1.json
+      --strategy YoyoActionStrategy
+  freqtrade_dry_action_zone_2:
+    image: freqtradeorg/freqtrade:stable
+    # image: freqtradeorg/freqtrade:develop
+    # Use plotting image
+    # image: freqtradeorg/freqtrade:develop_plot
+    # Build step - only needed when additional dependencies are needed
+    # build:
+    #   context: .
+    #   dockerfile: "./docker/Dockerfile.custom"
+    restart: unless-stopped
+    container_name: freqtrade_dry_actionZone2
+    volumes:
+      - "./user_data:/freqtrade/user_data"
+    # Expose api on port 8080 (localhost only)
+    # Please read the https://www.freqtrade.io/en/latest/rest-api/ documentation
+    # before enabling this.
+    # ports:
+    #   - "127.0.0.1:8080:8080"
+    # Default command used when running `docker compose up`
+    command: >
+      trade
+      --logfile /freqtrade/user_data/logs/freqtrade.log
+      --db-url sqlite:////freqtrade/user_data/tradesv3.dryrun.actionZone2.sqlite
+      --config /freqtrade/user_data/configs/config_binance_zone2.json
+      --strategy YoyoActionStrategy
